@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Transition, animated, config } from 'react-spring'
@@ -8,7 +8,6 @@ import DeloreanIpsum from './containers/DeloreanIpsum'
 import BaconIpsum from './containers/BaconIpsum'
 import './styles.css'
 
-// Re-use this class whereever you would normally switch between routes ...
 const AnimatedRoute = ({ children }) => (
   <Route
     render={({ location }) => (
