@@ -8,6 +8,12 @@ import DeloreanIpsum from './containers/DeloreanIpsum'
 import BaconIpsum from './containers/BaconIpsum'
 import './styles.css'
 
+const customConfig = {
+  mass: 1,
+  tension: 600,
+  friction: 20,
+}
+
 const AnimatedRoute = ({ children }) => (
   <Route
     render={({ location }) => (
@@ -22,7 +28,8 @@ const AnimatedRoute = ({ children }) => (
           transform: 'translateX(-101vw) translateY(50vh) perspective(900px) rotateY(-90deg)',
           pointerEvents: 'none',
         }}
-        config={{ ...config.wobbly }}>
+        config={customConfig} // can either be spring-based or duration-based, not both
+      >
         {location => style => (
           <animated.div style={{ ...style, position: 'absolute', width: '100%' }}>{children(location)}</animated.div>
         )}
