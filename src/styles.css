@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #222222;
+  color: #f7f7f7;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+    segoe ui, arial, sans-serif;
+  overflow-x: hidden;
+}
+
+a,
+a:active,
+a:visited {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 1rem;
+}
+
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0 7px;
+}
+
+.nav-link .active {
+  text-decoration: underline;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem 15vw;
+  height: 93vh;
+  width: 100%;
+}
