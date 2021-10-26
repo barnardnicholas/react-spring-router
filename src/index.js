@@ -15,9 +15,14 @@ const AnimatedRoute = ({ children }) => (
         native
         items={location}
         keys={location => location.pathname}
-        from={{ opacity: 0, transform: 'perspective(900px) rotateY(180deg)' }}
-        enter={{ opacity: 1, transform: 'perspective(900px) rotateY(0deg)' }}
-        leave={{ opacity: 0, transform: 'perspective(900px) rotateY(-180deg)', pointerEvents: 'none' }}>
+        from={{ opacity: 0, transform: 'translateX(101vw) translateY(50vh) perspective(900px) rotateY(90deg)' }}
+        enter={{ opacity: 1, transform: 'translateX(0) translateY(0) perspective(900px) rotateY(0deg)' }}
+        leave={{
+          opacity: 0,
+          transform: 'translateX(-101vw) translateY(50vh) perspective(900px) rotateY(-90deg)',
+          pointerEvents: 'none',
+        }}
+        config={{ ...config.wobbly }}>
         {location => style => (
           <animated.div style={{ ...style, position: 'absolute', width: '100%' }}>{children(location)}</animated.div>
         )}
