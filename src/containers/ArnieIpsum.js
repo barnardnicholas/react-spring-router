@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ArnieIpsum = ({ style }) => (
-  <main className="container" style={style}>
+const ArnieIpsum = () => (
+  <main className="container">
     <h1>Arnie Ipsum</h1>
     <p>
       You're not going to have your mommies right behind you to wipe your little tushies... What killed the dinosaurs?

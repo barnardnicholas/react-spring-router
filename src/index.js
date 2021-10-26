@@ -1,18 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Transition, animated, config } from 'react-spring'
-import Header from './components/Header'
-import ArnieIpsum from './containers/ArnieIpsum'
-import DeloreanIpsum from './containers/DeloreanIpsum'
-import BaconIpsum from './containers/BaconIpsum'
-import './styles.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Transition, animated, config } from 'react-spring';
+import Header from './components/Header';
+import ArnieIpsum from './containers/ArnieIpsum';
+import DeloreanIpsum from './containers/DeloreanIpsum';
+import BaconIpsum from './containers/BaconIpsum';
+import './styles.css';
+import DemoPage from './containers/DemoPage';
 
 const customConfig = {
   mass: 1,
   tension: 600,
   friction: 20,
-}
+};
 
 const AnimatedRoute = ({ children }) => (
   <Route
@@ -36,7 +37,7 @@ const AnimatedRoute = ({ children }) => (
       </Transition>
     )}
   />
-)
+);
 
 const App = () => {
   return (
@@ -49,12 +50,13 @@ const App = () => {
               <Route exact path="/" render={props => <ArnieIpsum />} />
               <Route path="/bacon" render={props => <BaconIpsum />} />
               <Route path="/delorean" render={props => <DeloreanIpsum />} />
+              <Route path="/demo-page" render={props => <DemoPage />} />
             </Switch>
           )}
         </AnimatedRoute>
       </>
     </Router>
-  )
-}
+  );
+};
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'));

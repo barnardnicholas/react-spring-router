@@ -1,7 +1,7 @@
 import React from 'react'
 
-const BaconIpsum = ({ style }) => (
-  <main className="container" style={style}>
+const BaconIpsum = () => (
+  <main className="container">
     <h1>Bacon Ipsum</h1>
     <p>
       Bacon ipsum dolor amet hamburger boudin meatloaf tongue salami ham sirloin pork loin. Leberkas cow short ribs,
