@@ -15,7 +15,7 @@ const customConfig = {
   friction: 30,
 };
 
-const AnimatedRoute = ({ style, children }) => {
+const AnimatedRoute = ({ children }) => {
   const { pathname } = useLocation();
 
   const transitions = useTransition(pathname, {
