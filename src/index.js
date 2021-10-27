@@ -12,7 +12,7 @@ import DemoPage from './containers/DemoPage';
 const customConfig = {
   mass: 1,
   tension: 600,
-  friction: 20,
+  friction: 30,
 };
 
 const AnimatedRoute = ({ children }) => {
