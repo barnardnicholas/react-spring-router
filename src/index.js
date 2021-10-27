@@ -32,7 +32,7 @@ const AnimatedRoute = ({ children }) => {
   return (
     <Route
       render={({ location }) =>
-        transitions((style, item) => {
+        transitions((style) => {
           return (
             <animated.div style={{ ...style, position: 'absolute', width: '100%' }}>{children(location)}</animated.div>
           );
@@ -63,25 +63,3 @@ const App = () => {
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-{
-  /* <Transition
-          items={this.state.items}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
-          config={config.molasses}
-          >
-          {({ opacity }, item) => (
-            <animated.div
-              style={{
-                opacity: opacity.to(item.op),
-                transform: opacity
-                  .to(item.trans)
-                  .to(y => `translate3d(0,${y}px,0)`),
-              }}>
-              {item.fig}
-            </animated.div>
-          )}
-        </Transition> */
-}
