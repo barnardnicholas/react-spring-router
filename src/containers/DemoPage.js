@@ -1,6 +1,7 @@
 import React from 'react';
 import FadeItem from '../DemoItems/FadeItem';
 import SizeItem from '../DemoItems/SizeItem';
+import AnimOnMountItem from '../DemoItems/AnimOnMountItem';
 
 const DemoPage = () => {
   return (
@@ -14,6 +15,10 @@ const DemoPage = () => {
       <section>
         <h2>Toogle Size</h2>
         <SizeItem />
+      </section>
+      <section>
+        <h2>Animate on Mount</h2>
+        <AnimOnMountItem />
       </section>
     </main>
   );
