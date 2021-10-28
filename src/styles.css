@@ -14,12 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-a,
-a:active,
-a:visited {
-  color: inherit;
-}
-
 h1,
 h2,
 h3,
@@ -28,6 +22,31 @@ h5,
 h6,
 p {
   margin-bottom: 1rem;
+}
+
+a,
+a:active,
+a:visited {
+  color: inherit;
+}
+
+button {
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  border: 0;
+  padding: 0.5em 1.5em;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #222222;
+  border: 1px solid;
+  color: #f7f7f7;
+}
+
+button:active {
+  background-color: #999999;
 }
 
 header {
@@ -55,4 +74,13 @@ header {
   padding: 2rem 15vw;
   height: 93vh;
   width: 100%;
+}
+
+section {
+  padding: 2rem 0;
+  border-top: 1px solid;
+}
+
+section:last-child {
+  border-bottom: 1px solid;
 }
