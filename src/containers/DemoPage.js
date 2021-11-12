@@ -2,6 +2,7 @@ import React from 'react';
 import FadeItem from '../DemoItems/FadeItem';
 import SizeItem from '../DemoItems/SizeItem';
 import AnimOnMountItem from '../DemoItems/AnimOnMountItem';
+import MouseFollowItem from '../DemoItems/MouseFollowItem';
 
 const DemoPage = () => {
   return (
@@ -19,6 +20,10 @@ const DemoPage = () => {
       <section>
         <h2>Animate on Mount</h2>
         <AnimOnMountItem />
+      </section>
+      <section>
+        <h2>Mouse follower</h2>
+        <MouseFollowItem />
       </section>
     </main>
   );

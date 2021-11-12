@@ -84,3 +84,21 @@ section {
 section:last-child {
   border-bottom: 1px solid;
 }
+
+.mouse-follow-container {
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  height: 25vh;
+  border: 1px solid;
+}
+
+.mouse-follower {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+}
