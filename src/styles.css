@@ -130,3 +130,8 @@ section:last-child {
   align-items: center;
   border-radius: 1rem;
 }
+
+.mouse-shadow-text {
+  font-size: 6rem;
+  font-weight: bold;
+}

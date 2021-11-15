@@ -4,6 +4,7 @@ import SizeItem from '../DemoItems/SizeItem';
 import AnimOnMountItem from '../DemoItems/AnimOnMountItem';
 import MouseFollowItem from '../DemoItems/MouseFollowItem';
 import MouseTiltItem from '../DemoItems/MouseTiltItem';
+import MouseShadowItem from '../DemoItems/MouseShadowItem';
 
 const DemoPage = () => {
   return (
@@ -29,6 +30,10 @@ const DemoPage = () => {
       <section>
         <h2>Mouse tilt</h2>
         <MouseTiltItem />
+      </section>
+      <section>
+        <h2>Mouse shadow</h2>
+        <MouseShadowItem />
       </section>
     </main>
   );
