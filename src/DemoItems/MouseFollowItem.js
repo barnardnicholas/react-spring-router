@@ -11,19 +11,17 @@ const MouseFollowItem = () => {
   const [followerPosition, setFollowerPosition] = useState({ pX: 50, pY: 50 });
 
   useEffect(() => {
-    const getFollowerPosition = (w, h, cX, cY, mX, mY) => {
-      const dX = mX - cX;
-      const dY = mY - cY;
-      let pX = (dX / w) * 200 + 50;
-      let pY = (dY / h) * 200 + 50;
+    const getFollowerPosition = (w, h, mX, mY) => {
+      let pX = mX / (w / 100);
+      let pY = mY / (h / 100);
       if (pX < 0) pX = 0;
       if (pX > 100) pX = 100;
       if (pY < 0) pY = 0;
       if (pY > 100) pY = 100;
       return { pX, pY };
     };
-    setFollowerPosition(getFollowerPosition(width, height, centerX, centerY, x, y));
-  }, [width, height, centerX, centerY, x, y]);
+    setFollowerPosition(getFollowerPosition(width, height, x, y));
+  }, [width, height, x, y]);
 
   const followStyles = useSpring({
     config: { ...config.wobbly },
@@ -36,6 +34,7 @@ const MouseFollowItem = () => {
 
   return (
     <div className="mouse-follow-container">
+      <p>The ball should track the mouse cursor with spring movement.</p>
       <animated.span className="mouse-follower" style={followStyles} />
     </div>
   );
