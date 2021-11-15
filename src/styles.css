@@ -91,6 +91,7 @@ section:last-child {
   width: 25vw;
   height: 25vh;
   border: 1px solid;
+  border-radius: 1rem;
 }
 
 .mouse-follower {
@@ -127,4 +128,5 @@ section:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 1rem;
 }

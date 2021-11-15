@@ -33,10 +33,12 @@ const MouseFollowItem = () => {
   });
 
   return (
-    <div className="mouse-follow-container">
+    <>
       <p>The ball should track the mouse cursor with spring movement.</p>
-      <animated.span className="mouse-follower" style={followStyles} />
-    </div>
+      <div className="mouse-follow-container">
+        <animated.span className="mouse-follower" style={followStyles} />
+      </div>
+    </>
   );
 };
 

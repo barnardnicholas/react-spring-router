@@ -15,7 +15,7 @@ const MouseTiltItem = () => {
   const getTilterPosition = (w, h, mX, mY, cX, cY) => {
     const dY = (mX - cX) / (w / 2);
     const dX = (mY - cY) / (h / 2);
-    const aX = dX * maxTilt;
+    const aX = dX * maxTilt * -1;
     const aY = dY * maxTilt;
     return { aX, aY };
   };
