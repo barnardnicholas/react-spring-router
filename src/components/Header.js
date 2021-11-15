@@ -1,23 +1,23 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import HeaderLink from './HeaderLink';
 
 const Header = () => {
   return (
     <header>
-      <NavLink className="nav-link" to="/">
+      <HeaderLink className="nav-link" to="/">
         Arnie
-      </NavLink>
-      <NavLink className="nav-link" to="/bacon">
+      </HeaderLink>
+      <HeaderLink className="nav-link" to="/bacon">
         Bacon
-      </NavLink>
-      <NavLink className="nav-link" to="/delorean">
+      </HeaderLink>
+      <HeaderLink className="nav-link" to="/delorean">
         Delorean
-      </NavLink>
-      <NavLink className="nav-link" to="/demo-page">
+      </HeaderLink>
+      <HeaderLink className="nav-link" to="/demo-page">
         Demo Page
-      </NavLink>
+      </HeaderLink>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
