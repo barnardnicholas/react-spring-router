@@ -3,6 +3,7 @@ import FadeItem from '../DemoItems/FadeItem';
 import SizeItem from '../DemoItems/SizeItem';
 import AnimOnMountItem from '../DemoItems/AnimOnMountItem';
 import MouseFollowItem from '../DemoItems/MouseFollowItem';
+import MouseTiltItem from '../DemoItems/MouseTiltItem';
 
 const DemoPage = () => {
   return (
@@ -24,6 +25,10 @@ const DemoPage = () => {
       <section>
         <h2>Mouse follower</h2>
         <MouseFollowItem />
+      </section>
+      <section>
+        <h2>Mouse tilt</h2>
+        <MouseTiltItem />
       </section>
     </main>
   );
