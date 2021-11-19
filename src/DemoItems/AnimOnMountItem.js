@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, config, animated } from 'react-spring';
+import AnimatedButton from '../components/AnimatedButton';
 
 const AnimOnMount = () => {
   const [style, animate] = useSpring({ transform: `scale(10%)` }, []);
@@ -18,7 +19,7 @@ const AnimOnMountItem = () => {
   return (
     <>
       {visible ? <AnimOnMount /> : <div style={{ minHeight: '2.1rem' }} />}
-      <button onClick={() => setVisible((val) => !val)}>Toggle Component</button>
+      <AnimatedButton onClick={() => setVisible((val) => !val)}>Toggle Component</AnimatedButton>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
+import AnimatedButton from '../components/AnimatedButton';
 import useHeight from '../hooks/useHeight';
 
 const SizeItem = () => {
@@ -30,7 +31,7 @@ const SizeItem = () => {
           </p>
         </div>
       </animated.div>
-      <button onClick={() => setShowB((val) => !val)}>Toggle Height</button>
+      <AnimatedButton onClick={() => setShowB((val) => !val)}>Toggle Height</AnimatedButton>
     </>
   );
 };

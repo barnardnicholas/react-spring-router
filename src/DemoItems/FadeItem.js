@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
+import AnimatedButton from '../components/AnimatedButton';
 
 const FadeItem = () => {
   const [showA, setShowA] = useState(false);
@@ -17,7 +18,7 @@ const FadeItem = () => {
       <animated.div style={fadeStyles}>
         <p>This text fades in and out</p>
       </animated.div>
-      <button onClick={() => setShowA(val => !val)}>Toggle Opacity</button>
+      <AnimatedButton onClick={() => setShowA((val) => !val)}>Toggle Opacity</AnimatedButton>
     </>
   );
 };
