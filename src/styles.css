@@ -135,3 +135,10 @@ section:last-child {
   font-size: 6rem;
   font-weight: bold;
 }
+
+.animated-button {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
