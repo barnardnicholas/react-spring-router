@@ -10,7 +10,6 @@ export default function HeaderLink({ className, to, children }) {
     from: {
       transform: 'scale(100%)',
       fontWeight: 'normal',
-      transform: 'scale(100%)',
     },
     to: {
       transform: isOver ? 'scale(105%)' : 'scale(100%)',
