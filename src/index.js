@@ -11,21 +11,19 @@ import AnimatedRoute from './AnimatedRoute';
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header />
-      <Router>
-        <AnimatedRoute>
-          {(location) => (
-            <Switch location={location}>
-              <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
-              <Route path="/bacon" render={(props) => <BaconIpsum />} />
-              <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
-              <Route path="/demo-page" render={(props) => <DemoPage />} />
-            </Switch>
-          )}
-        </AnimatedRoute>
-      </Router>
-    </>
+      <AnimatedRoute>
+        {(location) => (
+          <Switch location={location}>
+            <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
+            <Route path="/bacon" render={(props) => <BaconIpsum />} />
+            <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
+            <Route path="/demo-page" render={(props) => <DemoPage />} />
+          </Switch>
+        )}
+      </AnimatedRoute>
+    </Router>
   );
 };
 
