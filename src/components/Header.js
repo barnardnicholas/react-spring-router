@@ -4,7 +4,10 @@ import HeaderLink from './HeaderLink';
 const Header = () => {
   return (
     <header>
-      <HeaderLink className="nav-link" to="/">
+      <HeaderLink className="nav-link" to="/demo-page">
+        Demo Page
+      </HeaderLink>
+      <HeaderLink className="nav-link" to="/arnie">
         Arnie
       </HeaderLink>
       <HeaderLink className="nav-link" to="/bacon">
@@ -12,9 +15,6 @@ const Header = () => {
       </HeaderLink>
       <HeaderLink className="nav-link" to="/delorean">
         Delorean
-      </HeaderLink>
-      <HeaderLink className="nav-link" to="/demo-page">
-        Demo Page
       </HeaderLink>
     </header>
   );
