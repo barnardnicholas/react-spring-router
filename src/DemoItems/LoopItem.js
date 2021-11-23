@@ -1,14 +1,17 @@
-import React from 'react';
-import { useSpring, config, animated } from 'react-spring';
+import React, { useEffect, useState } from 'react';
 
 const LoopItem = () => {
-  const loopStyles = useSpring({
-    loop: true,
-    to: [{ transform: `scale(50%)` }, { transform: `scale(100%)` }],
-    from: { transform: `scale(100%)` },
-    config: config.wobbly,
-  });
-  return <animated.div style={loopStyles}>This text changes size continually</animated.div>;
+  const [isScaled, setIsScaled] = useState(false);
+
+  useEffect(() => {
+    const tick = setInterval(() => {
+      setIsScaled(!isScaled);
+    }, 1000);
+    return () => clearInterval(tick);
+  }, [isScaled, setIsScaled]);
+
+  const loopStyles = { transform: isScaled ? `scale(50%)` : `scale(100%)` };
+  return <div style={loopStyles}>This text changes size continually</div>;
 };
 
 export default LoopItem;
