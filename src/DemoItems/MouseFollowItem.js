@@ -5,7 +5,7 @@ import useMousePosition from '../hooks/useMousePosition';
 const MouseFollowItem = () => {
   const {
     position: { x, y },
-    windowSize: { width, height, centerX, centerY },
+    windowSize: { width, height },
   } = useMousePosition();
 
   const [followerPosition, setFollowerPosition] = useState({ pX: 50, pY: 50 });
