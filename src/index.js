@@ -10,15 +10,17 @@ import DemoPage from './containers/DemoPage';
 
 const App = () => {
   return (
-    <Router>
+    <>
       <Header />
-      <Switch>
-        <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
-        <Route path="/bacon" render={(props) => <BaconIpsum />} />
-        <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
-        <Route path="/demo-page" render={(props) => <DemoPage />} />
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
+          <Route path="/bacon" render={(props) => <BaconIpsum />} />
+          <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
+          <Route path="/demo-page" render={(props) => <DemoPage />} />
+        </Switch>
+      </Router>
+    </>
   );
 };
 
