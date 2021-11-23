@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
-import { useSpring, config, animated } from 'react-spring';
-import AnimatedButton from '../components/Button';
+import Button from '../components/Button';
 import useHeight from '../hooks/useHeight';
 
 const SizeItem = () => {
   const [heightRef, height] = useHeight();
   const [showB, setShowB] = useState(false);
-  const slideInStyles = useSpring({
-    config: { ...config.stiff },
-    from: { opacity: 0, height: 0 },
-    to: {
-      opacity: showB ? 1 : 0,
-      height: showB ? height : 0,
-    },
-  });
+  const slideInStyles = {
+    opacity: showB ? 1 : 0,
+    height: showB ? height : 0,
+  };
 
   return (
     <>
-      <animated.div style={{ ...slideInStyles, overflow: 'hidden' }}>
+      <div style={{ ...slideInStyles, overflow: 'hidden' }}>
         <div ref={heightRef} style={{ padding: '40px' }}>
           <p>
             Huh? Wait a minute, what are you doing, Doc? Hey c'mon, I had to change, you think I'm going back in that
@@ -30,8 +25,8 @@ const SizeItem = () => {
             on?
           </p>
         </div>
-      </animated.div>
-      <AnimatedButton onClick={() => setShowB((val) => !val)}>Toggle Height</AnimatedButton>
+      </div>
+      <Button onClick={() => setShowB((val) => !val)}>Toggle Height</Button>
     </>
   );
 };

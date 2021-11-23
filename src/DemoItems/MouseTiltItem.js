@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSpring, config, animated } from 'react-spring';
 import useMousePosition from '../hooks/useMousePosition';
 
 const MouseTiltItem = () => {
@@ -24,21 +23,17 @@ const MouseTiltItem = () => {
     setTilterPosition(getTilterPosition(width, height, x, y, centerX, centerY));
   }, [width, height, x, y]);
 
-  const tiltStyles = useSpring({
-    config: { ...config.wobbly },
-    from: { transform: 'rotateX(0deg) rotateY(0deg)' },
-    to: {
-      transform: `rotateX(${tilterPosition.aX}deg) rotateY(${tilterPosition.aY}deg)`,
-    },
-  });
+  const tiltStyles = {
+    transform: `rotateX(${tilterPosition.aX}deg) rotateY(${tilterPosition.aY}deg)`,
+  };
 
   return (
     <>
       <p>The box should tilt in response to mouse movement</p>
       <div className="mouse-tilt-container">
-        <animated.div className="mouse-tilter" style={tiltStyles}>
+        <div className="mouse-tilter" style={tiltStyles}>
           <h4>I tilt</h4>
-        </animated.div>
+        </div>
       </div>
     </>
   );

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useSpring, config, animated } from 'react-spring';
 import useMousePosition from '../hooks/useMousePosition';
 
 const MouseShadowItem = () => {
   const {
     position: { x, y },
-    windowSize: { width, height, centerX, centerY },
+    windowSize: { width, height },
   } = useMousePosition();
 
   const [shadowOffset, setShadowOffset] = useState({ oX: 0, oY: 0 });
@@ -22,20 +21,16 @@ const MouseShadowItem = () => {
     setShadowOffset(getShadowOffset(width, height, x, y));
   }, [width, height, x, y]);
 
-  const shadowStyles = useSpring({
-    config: { ...config.wobbly },
-    from: { textShadow: '0px 0px 15px #ff0000' },
-    to: {
-      textShadow: `${shadowOffset.oX}px ${shadowOffset.oY}px 15px #ff0000`,
-    },
-  });
+  const shadowStyles = {
+    textShadow: `${shadowOffset.oX}px ${shadowOffset.oY}px 15px #ff0000`,
+  };
 
   return (
     <>
       <p style={{ marginBottom: '3rem' }}>The text shadow should change in response to cursor movement.</p>
-      <animated.p className="mouse-shadow-text" style={shadowStyles}>
+      <p className="mouse-shadow-text" style={shadowStyles}>
         Shadow Text
-      </animated.p>
+      </p>
     </>
   );
 };

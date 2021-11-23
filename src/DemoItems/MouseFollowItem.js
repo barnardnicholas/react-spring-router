@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSpring, config, animated } from 'react-spring';
 import useMousePosition from '../hooks/useMousePosition';
 
 const MouseFollowItem = () => {
@@ -24,20 +23,16 @@ const MouseFollowItem = () => {
     setFollowerPosition(getFollowerPosition(width, height, x, y));
   }, [width, height, x, y]);
 
-  const followStyles = useSpring({
-    config: { ...config.wobbly },
-    from: { top: 'calc(50% - 1rem)', left: 'calc(50% - 1rem)' },
-    to: {
-      top: `calc(${followerPosition.pY}% - 1rem)`,
-      left: `calc(${followerPosition.pX}% - 1rem)`,
-    },
-  });
+  const followStyles = {
+    top: `calc(${followerPosition.pY}% - 1rem)`,
+    left: `calc(${followerPosition.pX}% - 1rem)`,
+  };
 
   return (
     <>
       <p style={{ marginBottom: '3rem' }}>The ball should track the mouse cursor with spring movement.</p>
       <div className="mouse-follow-container">
-        <animated.span className="mouse-follower" style={followStyles} />
+        <span className="mouse-follower" style={followStyles} />
       </div>
     </>
   );
