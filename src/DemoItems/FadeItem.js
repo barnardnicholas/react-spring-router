@@ -7,7 +7,7 @@ const FadeItem = () => {
   return (
     <>
       <div style={{ opacity: showA ? 1 : 0 }}>
-        <p>This text fades in and out</p>
+        <p>This text blinks in and out of existence</p>
       </div>
       <Button onClick={() => setShowA((val) => !val)}>Toggle Opacity</Button>
     </>

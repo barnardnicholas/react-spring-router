@@ -30,7 +30,7 @@ const MouseFollowItem = () => {
 
   return (
     <>
-      <p style={{ marginBottom: '3rem' }}>The ball should track the mouse cursor with spring movement.</p>
+      <p style={{ marginBottom: '3rem' }}>The ball should track the mouse cursor.</p>
       <div className="mouse-follow-container">
         <span className="mouse-follower" style={followStyles} />
       </div>

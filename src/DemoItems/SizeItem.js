@@ -13,6 +13,7 @@ const SizeItem = () => {
     <>
       <div style={{ ...slideInStyles, overflow: 'hidden' }}>
         <div ref={heightRef} style={{ padding: '40px' }}>
+          <h3>This text is either full height or no height</h3>
           <p>
             Huh? Wait a minute, what are you doing, Doc? Hey c'mon, I had to change, you think I'm going back in that
             zoot suit? The old man really came through it worked. No, Doc. Shape up, man. You're a slacker. You wanna be
