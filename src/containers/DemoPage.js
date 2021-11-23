@@ -21,6 +21,10 @@ const DemoPage = () => {
         <SizeItem />
       </section>
       <section>
+        <h2>Looping animation</h2>
+        <LoopItem />
+      </section>
+      <section>
         <h2>Animate on Mount</h2>
         <AnimOnMountItem />
       </section>
@@ -35,10 +39,6 @@ const DemoPage = () => {
       <section>
         <h2>Mouse shadow</h2>
         <MouseShadowItem />
-      </section>
-      <section>
-        <h2>Looping animation</h2>
-        <LoopItem />
       </section>
     </main>
   );
