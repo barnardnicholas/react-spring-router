@@ -6,7 +6,6 @@ const SizeItem = () => {
   const [heightRef, height] = useHeight();
   const [showB, setShowB] = useState(false);
   const slideInStyles = {
-    opacity: showB ? 1 : 0,
     height: showB ? height : 0,
   };
 
