@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, config, animated } from 'react-spring';
-import AnimatedButton from '../components/AnimatedButton';
+import AnimatedButton from '../components/Button';
 
 const AnimOnMount = () => {
   const [style, animate] = useSpring({ transform: `scale(10%)` }, []);

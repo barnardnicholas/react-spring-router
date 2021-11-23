@@ -1,27 +1,12 @@
-import React, { useState } from 'react';
-import { useSpring, config, animated } from 'react-spring';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function HeaderLink({ className, to, children }) {
-  const [isOver, setIsOver] = useState(false);
-
-  const hoverStyles = useSpring({
-    config: { ...config.wobbly },
-    from: {
-      transform: 'scale(100%)',
-      fontWeight: 'normal',
-    },
-    to: {
-      transform: isOver ? 'scale(105%)' : 'scale(100%)',
-      fontWeight: isOver ? 'bold' : 'normal',
-    },
-  });
-
   return (
-    <animated.div style={hoverStyles}>
-      <NavLink className={className} to={to} onMouseOver={() => setIsOver(true)} onMouseLeave={() => setIsOver(false)}>
+    <div>
+      <NavLink className={className} to={to}>
         {children}
       </NavLink>
-    </animated.div>
+    </div>
   );
 }

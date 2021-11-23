@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
-import AnimatedButton from '../components/AnimatedButton';
+import AnimatedButton from '../components/Button';
 
 const FadeItem = () => {
   const [showA, setShowA] = useState(false);
