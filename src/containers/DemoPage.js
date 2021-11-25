@@ -7,8 +7,11 @@ import MouseTiltItem from '../DemoItems/MouseTiltItem';
 import MouseShadowItem from '../DemoItems/MouseShadowItem';
 import LoopItem from '../DemoItems/LoopItem';
 import MouseFollowSVG from '../DemoItems/MouseFollowSVG';
+import useMousePosition from '../hooks/useMousePosition';
 
 const DemoPage = () => {
+  const { position, windowSize, isTopHalf, isLeftHalf } = useMousePosition();
+
   return (
     <main className="container">
       <h1>Demo Page</h1>
@@ -31,19 +34,19 @@ const DemoPage = () => {
       </section>
       <section>
         <h2>Mouse follower</h2>
-        <MouseFollowItem />
+        <MouseFollowItem position={position} windowSize={windowSize} />
       </section>
       <section>
         <h2>Mouse tilt</h2>
-        <MouseTiltItem />
+        <MouseTiltItem position={position} windowSize={windowSize} />
       </section>
       <section>
         <h2>Mouse shadow</h2>
-        <MouseShadowItem />
+        <MouseShadowItem position={position} windowSize={windowSize} />
       </section>
       <section>
         <h2>Dynamic SVG</h2>
-        <MouseFollowSVG />
+        <MouseFollowSVG position={position} windowSize={windowSize} isTopHalf={isTopHalf} isLeftHalf={isLeftHalf} />
       </section>
     </main>
   );

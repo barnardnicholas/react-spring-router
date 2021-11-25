@@ -12,7 +12,6 @@ function SVGCurvedArrow({
   left = false,
 }) {
   const containerRef = useRef(document.createElement('div'));
-  console.log({ left: top });
 
   const [clientHeight, setClientHeight] = useState(0);
   const [clientWidth, setClientWidth] = useState(0);

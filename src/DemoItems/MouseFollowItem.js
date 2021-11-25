@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
-import useMousePosition from '../hooks/useMousePosition';
 
-const MouseFollowItem = () => {
-  const {
-    position: { x, y },
-    windowSize: { width, height },
-  } = useMousePosition();
-
+const MouseFollowItem = ({ position: { x, y }, windowSize: { width, height } }) => {
   const [followerPosition, setFollowerPosition] = useState({ pX: 50, pY: 50 });
 
   const getFollowerPosition = (w, h, mX, mY) => {
