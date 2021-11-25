@@ -144,3 +144,12 @@ section:last-child {
   justify-content: center;
   align-items: center;
 }
+
+.large {
+  width: 50vw;
+  height: 50vw;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
