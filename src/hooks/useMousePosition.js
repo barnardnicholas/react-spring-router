@@ -30,10 +30,12 @@ const useMousePosition = () => {
   };
 
   useEffect(() => {
+    console.log('addListeners');
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
 
     return () => {
+      console.log('clearing');
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
     };

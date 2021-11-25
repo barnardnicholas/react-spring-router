@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useMousePosition from '../hooks/useMousePosition';
+import { useSpring, config, animated } from 'react-spring';
 
-const MouseTiltItem = () => {
-  const {
-    position: { x, y },
-    windowSize: { width, height, centerX, centerY },
-  } = useMousePosition();
-
+const MouseTiltItem = ({ position: { x, y }, windowSize: { width, height, centerX, centerY } }) => {
   const [tilterPosition, setTilterPosition] = useState({ aX: 0, aY: 0 });
 
   const maxTilt = 25;

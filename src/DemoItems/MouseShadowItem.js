@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useMousePosition from '../hooks/useMousePosition';
+import { useSpring, config, animated } from 'react-spring';
 
-const MouseShadowItem = () => {
-  const {
-    position: { x, y },
-    windowSize: { width, height },
-  } = useMousePosition();
-
+const MouseShadowItem = ({ position: { x, y }, windowSize: { width, height } }) => {
   const [shadowOffset, setShadowOffset] = useState({ oX: 0, oY: 0 });
 
   const getShadowOffset = (w, h, mX, mY) => {
