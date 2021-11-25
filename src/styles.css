@@ -147,7 +147,7 @@ section:last-child {
 
 .large {
   width: 50vw;
-  height: 50vw;
+  height: 50vh;
 }
 
 .no-overflow {
