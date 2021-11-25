@@ -16,7 +16,7 @@ const DemoPage = () => {
     <main className="container">
       <h1>Demo Page</h1>
       <p>Demos for React-Spring implementations</p>
-      <section>
+      {/* <section>
         <h2>Toggle Opacity</h2>
         <FadeItem />
       </section>
@@ -43,7 +43,7 @@ const DemoPage = () => {
       <section>
         <h2>Mouse shadow</h2>
         <MouseShadowItem position={position} windowSize={windowSize} />
-      </section>
+      </section> */}
       <section>
         <h2>Dynamic SVG</h2>
         <MouseFollowSVG position={position} windowSize={windowSize} isTopHalf={isTopHalf} isLeftHalf={isLeftHalf} />

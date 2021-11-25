@@ -22,7 +22,7 @@ const MouseFollowSVG = ({ position: { x, y }, windowSize: { width, height }, isT
     <>
       <p style={{ marginBottom: '3rem' }}>The arrow should track the mouse cursor.</p>
       <div className="mouse-follow-container large no-overflow">
-        <SVGCurvedArrow posiiton={followerPosition} />
+        <SVGCurvedArrow position={followerPosition} />
       </div>
     </>
   );
