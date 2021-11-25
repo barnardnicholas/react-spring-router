@@ -8,6 +8,7 @@ import BaconIpsum from './containers/BaconIpsum';
 import './styles.css';
 import DemoPage from './containers/DemoPage';
 import AnimatedRoute from './AnimatedRoute';
+import Home from './containers/Home';
 
 const App = () => {
   return (
@@ -16,13 +17,12 @@ const App = () => {
       <AnimatedRoute>
         {(location) => (
           <Switch location={location}>
-            <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
-            <Route path="/bacon" render={(props) => <BaconIpsum />} />
-            <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
-            <Route path="/demo-page" render={(props) => <DemoPage />} />
-          </Switch>
-        )}
-      </AnimatedRoute>
+        <Route exact path="/" render={(props) => <Home />} />
+        <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
+        <Route path="/bacon" render={(props) => <BaconIpsum />} />
+        <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
+        <Route path="/demo-page" render={(props) => <DemoPage />} />
+      </Switch>
     </Router>
   );
 };
