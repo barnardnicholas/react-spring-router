@@ -4,6 +4,12 @@ import AnimatedButton from '../components/AnimatedButton';
 import useHeight from '../hooks/useHeight';
 import Rob from '../content/rob.png';
 
+const customConfig = {
+  mass: 5,
+  tension: 800,
+  friction: 10,
+};
+
 const BobbleHead = () => {
   const [props, setProps] = useState({ angle: 0, scale: 100 });
 
@@ -13,7 +19,7 @@ const BobbleHead = () => {
   };
 
   const bobbleStyles = useSpring({
-    config: { ...config.wobbly },
+    config: customConfig,
     from: { transform: `rotate(0deg) scale(100%)` },
     to: { transform: `rotate(${props.angle}deg) scale(${props.scale}%)` },
   });
