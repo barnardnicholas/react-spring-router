@@ -7,12 +7,14 @@ import DeloreanIpsum from './containers/DeloreanIpsum';
 import BaconIpsum from './containers/BaconIpsum';
 import './styles.css';
 import DemoPage from './containers/DemoPage';
+import Home from './containers/Home';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Switch>
+        <Route exact path="/" render={(props) => <Home />} />
         <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
         <Route path="/bacon" render={(props) => <BaconIpsum />} />
         <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
