@@ -153,3 +153,19 @@ section:last-child {
 .no-overflow {
   overflow: hidden;
 }
+
+.bobble-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem;
+}
+
+.bobblehead {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
