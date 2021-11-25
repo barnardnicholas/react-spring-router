@@ -6,6 +6,7 @@ import MouseFollowItem from '../DemoItems/MouseFollowItem';
 import MouseTiltItem from '../DemoItems/MouseTiltItem';
 import MouseShadowItem from '../DemoItems/MouseShadowItem';
 import LoopItem from '../DemoItems/LoopItem';
+import MouseFollowSVG from '../DemoItems/MouseFollowSVG';
 
 const DemoPage = () => {
   return (
@@ -39,6 +40,10 @@ const DemoPage = () => {
       <section>
         <h2>Mouse shadow</h2>
         <MouseShadowItem />
+      </section>
+      <section>
+        <h2>Dynamic SVG</h2>
+        <MouseFollowSVG />
       </section>
     </main>
   );

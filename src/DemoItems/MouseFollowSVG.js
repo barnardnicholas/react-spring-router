@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
+import SVGCurvedArrow from '../components/svg/SVGCurvedArrow';
 import useMousePosition from '../hooks/useMousePosition';
 
 const MouseFollowSVG = () => {
   const {
     position: { x, y },
     windowSize: { width, height },
+    isTopHalf,
+    isLeftHalf,
   } = useMousePosition();
 
   const [followerPosition, setFollowerPosition] = useState({ pX: 50, pY: 50 });
-  const containerRef = useRef(new HTMLDivElement());
 
   const getFollowerPosition = (w, h, mX, mY) => {
     let pX = mX / (w / 100);
@@ -31,9 +33,9 @@ const MouseFollowSVG = () => {
 
   return (
     <>
-      <p style={{ marginBottom: '3rem' }}>The ball should track the mouse cursor.</p>
-      <div ref={containerRef} className="mouse-follow-container">
-        <span className="mouse-follower" style={followStyles} />
+      <p style={{ marginBottom: '3rem' }}>The arrow should track the mouse cursor.</p>
+      <div className="mouse-follow-container large no-overflow">
+        <SVGCurvedArrow position={followerPosition} />
       </div>
     </>
   );

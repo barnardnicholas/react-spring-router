@@ -1,12 +1,7 @@
-import React from "react";
-import { rotate } from "./utils";
+import React from 'react';
+import { rotate } from '../../utils/utils';
 
-export default function SVGTriangle({
-  startXY = [50, 50],
-  width = 30,
-  height = 15,
-  angle = 0,
-}) {
+export default function SVGTriangle({ startXY = [50, 50], width = 30, height = 15, angle = 0 }) {
   const startCoords = {
     cxcy: [startXY[0], startXY[1]],
     aXY: [startXY[0], startXY[1] - height / 2],
@@ -15,27 +10,9 @@ export default function SVGTriangle({
   };
 
   const newCoords = {
-    aXY: rotate(
-      startXY[0],
-      startXY[1],
-      startCoords.aXY[0],
-      startCoords.aXY[1],
-      angle
-    ),
-    bXY: rotate(
-      startXY[0],
-      startXY[1],
-      startCoords.bXY[0],
-      startCoords.bXY[1],
-      angle
-    ),
-    cXY: rotate(
-      startXY[0],
-      startXY[1],
-      startCoords.cXY[0],
-      startCoords.cXY[1],
-      angle
-    ),
+    aXY: rotate(startXY[0], startXY[1], startCoords.aXY[0], startCoords.aXY[1], angle),
+    bXY: rotate(startXY[0], startXY[1], startCoords.bXY[0], startCoords.bXY[1], angle),
+    cXY: rotate(startXY[0], startXY[1], startCoords.cXY[0], startCoords.cXY[1], angle),
   };
 
   return (

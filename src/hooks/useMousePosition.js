@@ -9,6 +9,9 @@ const useMousePosition = () => {
     centerY: Math.floor(window.innerHeight / 2),
   });
 
+  const isTopHalf = position.y < windowSize.centerY;
+  const isLeftHalf = position.x < windowSize.centerX;
+
   const handleMouseMove = (event) => {
     setPosition({
       x: event.clientX,
@@ -36,7 +39,7 @@ const useMousePosition = () => {
     };
   }, []);
 
-  return { position, windowSize };
+  return { position, windowSize, isTopHalf, isLeftHalf };
 };
 
 export default useMousePosition;
