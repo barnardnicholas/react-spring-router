@@ -76,9 +76,15 @@ header {
 }
 
 .display-title {
-  font-size: 6rem;
+  font-size: 8rem;
   font-family: 'Thats Font Folks';
   font-style: italic;
+  transform: skewX(-5deg) skewY(-5deg);
+  text-shadow: 5px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.display-title > span {
+  position: relative;
 }
 
 .container {
