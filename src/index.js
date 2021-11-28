@@ -8,6 +8,9 @@ import BaconIpsum from './containers/BaconIpsum';
 import './styles.css';
 import DemoPage from './containers/DemoPage';
 import Home from './containers/Home';
+import MouseFollowerDemo from './containers/MouseFollowerDemo';
+import MouseTiltDemo from './containers/MouseTiltDemo';
+import MouseShadowDemo from './containers/MouseShadowDemo';
 
 const App = () => {
   return (
@@ -19,6 +22,9 @@ const App = () => {
         <Route path="/bacon" render={(props) => <BaconIpsum />} />
         <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
         <Route path="/demo-page" render={(props) => <DemoPage />} />
+        <Route path="/mouse-follower" render={(props) => <MouseFollowerDemo />} />
+        <Route path="/mouse-tilt" render={(props) => <MouseTiltDemo />} />
+        <Route path="/mouse-shadow" render={(props) => <MouseShadowDemo />} />
       </Switch>
     </Router>
   );

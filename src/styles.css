@@ -195,6 +195,7 @@ section:last-child {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  filter: grayscale();
 }
 
 .bobble-shadow {
