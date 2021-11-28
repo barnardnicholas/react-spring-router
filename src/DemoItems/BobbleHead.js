@@ -22,9 +22,24 @@ const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
     ...extraStyles,
   };
 
+  const bobbleStyles = useSpring({
+    config: customConfig,
+    from: { transform: `rotate(0deg) scale(100%)` },
+    to: { transform: `rotate(${props.angle}deg) scale(${props.scale}%)` },
+  });
+
+  useEffect(() => {
+    if (!isAnimatingIn && prevIsAnimatingIn) _handleClick();
+  }, [isAnimatingIn, prevIsAnimatingIn]);
+
   return (
     <div className="bobble-container">
-      <div className="bobblehead" style={baseStyles} />
+      <animated.div
+        onClick={_handleClick}
+        onMouseEnter={_handleMouseEnter}
+        className="bobblehead"
+        style={{ ...baseStyles, ...bobbleStyles }}
+      />
     </div>
   );
 };
