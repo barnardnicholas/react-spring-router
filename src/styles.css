@@ -184,11 +184,3 @@ section:last-child {
   background-repeat: no-repeat;
   background-position: center;
 }
-
-.bobble-shadow {
-  margin-top: 3rem;
-  height: 1rem;
-  width: 66%;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-}
