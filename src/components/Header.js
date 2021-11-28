@@ -10,6 +10,15 @@ const Header = () => {
       <HeaderLink className="nav-link" to="/demo-page">
         Demo Page
       </HeaderLink>
+      <HeaderLink className="nav-link" to="/mouse-follower">
+        Follower
+      </HeaderLink>
+      <HeaderLink className="nav-link" to="/mouse-tilt">
+        Tilt
+      </HeaderLink>
+      <HeaderLink className="nav-link" to="/mouse-shadow">
+        Shadow
+      </HeaderLink>
       <HeaderLink className="nav-link" to="/arnie">
         Arnie
       </HeaderLink>

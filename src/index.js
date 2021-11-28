@@ -10,6 +10,9 @@ import DemoPage from './containers/DemoPage';
 import AnimatedRoute from './AnimatedRoute';
 import Home from './containers/Home';
 import Splash from './containers/Splash';
+import MouseFollowerDemo from './containers/MouseFollowerDemo';
+import MouseTiltDemo from './containers/MouseTiltDemo';
+import MouseShadowDemo from './containers/MouseShadowDemo';
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
             <Route path="/bacon" render={(props) => <BaconIpsum />} />
             <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
             <Route path="/demo-page" render={(props) => <DemoPage />} />
+            <Route path="/mouse-follower" render={(props) => <MouseFollowerDemo />} />
+            <Route path="/mouse-tilt" render={(props) => <MouseTiltDemo />} />
+            <Route path="/mouse-shadow" render={(props) => <MouseShadowDemo />} />
           </Switch>
         )}
       </AnimatedRoute>
