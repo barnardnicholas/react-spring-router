@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="container">
       <h1>Home</h1>
-      <BobbleHead />
+      <BobbleHead person="mark" />
     </main>
   );
 }
