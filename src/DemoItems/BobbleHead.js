@@ -71,13 +71,8 @@ const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
     const isLeft = clientX < offsetWidth / 2;
 
     let angle = 0;
-    // if (isTop && isLeft) angle = 45;
-    // else if (isTop && !isLeft) angle = 135;
-    // else if (!isTop && !isLeft) angle = 225;
-    // else if (!isTop && isLeft) angle = 315;
 
-    if (isLeft) angle += 10;
-    else angle -= 10;
+    angle += isLeft ? 10 : -10;
     if (isTop) angle *= 1.2;
 
     const scale = Math.random() * 40 - 20 + 100;
