@@ -81,11 +81,10 @@ const BobbleHead = ({ person = 'rob', extraStyles = {}, isAnimatingIn }) => {
     const clientY = pageY - offsetTop;
 
     const isTop = clientY < offsetHeight / 2;
-    const isLeft = clientX < offsetWidth / 2;
+    const isRight = clientX < offsetWidth / 2 + offsetLeft;
 
-    let angle = 0;
-
-    angle += isLeft ? 10 : -10;
+    let angle = 10;
+    if (isRight) angle = -10;
     if (isTop) angle *= 1.2;
 
     const scale = Math.random() * 40 - 20 + 100;
