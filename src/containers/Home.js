@@ -35,7 +35,7 @@ export default function Home({ isIntro = false, extraStyles = {} }) {
       <DisplayTitle visible={isIntro ? titleCanShow : true} text="Loony Springs" />
       {!!isIntro && (
         <AnimatedButton className="intro-button" onClick={() => window.location.replace('/home')}>
-          Start
+          Next
         </AnimatedButton>
       )}
     </main>

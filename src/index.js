@@ -9,6 +9,7 @@ import './styles.css';
 import DemoPage from './containers/DemoPage';
 import AnimatedRoute from './AnimatedRoute';
 import Home from './containers/Home';
+import Splash from './containers/Splash';
 
 const App = () => {
   return (
@@ -30,7 +31,8 @@ const App = () => {
 };
 
 const RootApp = () => {
-  if (window.location.pathname === '/') return <Home isIntro extraStyles={{ height: '100vh' }} />;
+  if (window.location.pathname === '/') return <Splash />;
+  if (window.location.pathname === '/intro') return <Home isIntro extraStyles={{ height: '100vh' }} />;
   return <App />;
 };
 
