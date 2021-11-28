@@ -18,12 +18,20 @@ const people = {
   mark,
 };
 
-const BobbleHead = ({ person = 'rob' }) => {
+const defaultSize = {
+  width: 300,
+  height: 300,
+};
+
+const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
   const [props, setProps] = useState({ angle: 0, scale: 100 });
+  const [canMouseOver, setCanMouseOver] = useState(true);
 
   const baseStyles = {
+    ...defaultSize,
     transformOrigin: '50% 100%',
     backgroundImage: `url(${people[person]})`,
+    ...extraStyles,
   };
 
   const bobbleStyles = useSpring({
@@ -34,7 +42,12 @@ const BobbleHead = ({ person = 'rob' }) => {
 
   return (
     <div className="bobble-container">
-      <animated.div onClick={_handleClick} className="bobblehead" style={{ ...baseStyles, ...bobbleStyles }} />
+      <animated.div
+        onClick={_handleClick}
+        onMouseEnter={_handleMouseEnter}
+        className="bobblehead"
+        style={{ ...baseStyles, ...bobbleStyles }}
+      />
     </div>
   );
 
@@ -45,6 +58,40 @@ const BobbleHead = ({ person = 'rob' }) => {
     setTimeout(() => {
       setProps({ angle: 0, scale: 100 });
     }, 200);
+  }
+
+  function _handleMouseEnter(e) {
+    const { pageX, pageY } = e;
+    const { offsetWidth, offsetHeight, offsetTop, offsetLeft } = e.target;
+
+    const clientX = pageX - offsetLeft;
+    const clientY = pageY - offsetTop;
+
+    const isTop = clientY < offsetHeight / 2;
+    const isLeft = clientX < offsetWidth / 2;
+
+    let angle = 0;
+    // if (isTop && isLeft) angle = 45;
+    // else if (isTop && !isLeft) angle = 135;
+    // else if (!isTop && !isLeft) angle = 225;
+    // else if (!isTop && isLeft) angle = 315;
+
+    if (isLeft) angle += 10;
+    else angle -= 10;
+    if (isTop) angle *= 1.2;
+
+    const scale = Math.random() * 40 - 20 + 100;
+
+    if (canMouseOver) {
+      setCanMouseOver(false);
+      setProps({ angle, scale });
+      setTimeout(() => {
+        setProps({ angle: 0, scale: 100 });
+      }, 200);
+      setTimeout(() => {
+        setCanMouseOver(true);
+      }, 2000);
+    }
   }
 };
 
