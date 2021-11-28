@@ -25,6 +25,7 @@ const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
   return (
     <div className="bobble-container">
       <div className="bobblehead" style={baseStyles} />
+      <div className="bobble-shadow" />
     </div>
   );
 };
