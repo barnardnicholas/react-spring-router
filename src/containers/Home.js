@@ -4,8 +4,10 @@ import AnimatedButton from '../components/AnimatedButton';
 import DisplayTitle from '../components/DisplayTitle';
 import BobbleHead from '../DemoItems/BobbleHead';
 import useIntroMusic from '../hooks/useIntroMusic';
+import Splash from './Splash';
+import usePrevious from '../hooks/usePrevious';
 
-export default function Home({ isIntro = false, extraStyles = {} }) {
+function Home({ isIntro = false, extraStyles = {} }) {
   const [isAnimatingIn, setIsAnimatingIn] = useState(true);
   const [titleCanShow, setTitleCanShow] = useState(false);
 
@@ -26,7 +28,14 @@ export default function Home({ isIntro = false, extraStyles = {} }) {
     }
   }, []);
 
-  useIntroMusic();
+  const { sound, soundLoaded } = useIntroMusic();
+  const prevSoundLoaded = usePrevious(soundLoaded);
+
+  useEffect(() => {
+    if (prevSoundLoaded !== soundLoaded && soundLoaded && isIntro) {
+      sound.play();
+    }
+  }, [soundLoaded, prevSoundLoaded, isIntro]); // Play music when loaded
 
   return (
     <main style={extraStyles} className="container home">
@@ -44,3 +53,9 @@ export default function Home({ isIntro = false, extraStyles = {} }) {
     </main>
   );
 }
+
+export default ({ isSplash, setIsSplash, ...props }) => {
+  console.log({ isSplash, props });
+  if (isSplash) return <Splash setIsSplash={setIsSplash} />;
+  return <Home {...props} />;
+};

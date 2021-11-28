@@ -1,14 +1,20 @@
+import { useState } from 'react';
 import { Howl } from 'howler';
+import src from '../content/looneytunes.mp3';
 
 const useIntroMusic = () => {
+  console.log('useIntroMusic');
+  const [soundLoaded, setSoundLoaded] = useState(false);
   const sound = new Howl({
-    src: ['content/music.mp3'],
+    src: [src],
   });
 
   sound.once('load', () => {
     console.log('sound loaded');
-    sound.play();
+    setSoundLoaded(true);
   });
+
+  return { sound, soundLoaded };
 };
 
 export default useIntroMusic;

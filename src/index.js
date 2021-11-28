@@ -31,8 +31,9 @@ const App = () => {
 };
 
 const RootApp = () => {
-  if (window.location.pathname === '/') return <Splash />;
-  if (window.location.pathname === '/intro') return <Home isIntro extraStyles={{ height: '100vh' }} />;
+  const [isSplash, setIsSplash] = useState(true);
+  if (window.location.pathname === '/')
+    return <Home isSplash={isSplash} setIsSplash={setIsSplash} isIntro={true} extraStyles={{ height: '100vh' }} />;
   return <App />;
 };
 
