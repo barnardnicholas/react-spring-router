@@ -3,7 +3,7 @@ import BobbleHead from '../DemoItems/BobbleHead';
 
 export default function Home() {
   return (
-    <main className="container">
+    <main className="container home">
       <div className="bobble-cols">
         <BobbleHead person="mark" extraStyles={{ marginTop: '5rem' }} />
         <BobbleHead person="oli" />
