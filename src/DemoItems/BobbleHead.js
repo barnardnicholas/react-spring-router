@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
 import AnimatedButton from '../components/AnimatedButton';
 import useHeight from '../hooks/useHeight';
-import Rob from '../content/rob.png';
+import rob from '../content/rob.png';
+import oli from '../content/oli.png';
+import mark from '../content/mark.png';
 
 const customConfig = {
   mass: 5,
@@ -10,12 +12,18 @@ const customConfig = {
   friction: 10,
 };
 
-const BobbleHead = () => {
+const people = {
+  rob,
+  oli,
+  mark,
+};
+
+const BobbleHead = ({ person = 'rob' }) => {
   const [props, setProps] = useState({ angle: 0, scale: 100 });
 
   const baseStyles = {
     transformOrigin: '50% 100%',
-    backgroundImage: `url(${Rob})`,
+    backgroundImage: `url(${people[person]})`,
   };
 
   const bobbleStyles = useSpring({
