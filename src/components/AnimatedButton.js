@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
 import usePrevious from '../hooks/usePrevious';
 
-const AnimatedButton = ({ children, onClick = () => {}, animTime = 200 }) => {
+const AnimatedButton = ({ children, onClick = () => {}, animTime = 200, className = '' }) => {
   const [isClicking, setIsClicking] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const prevClicking = usePrevious(isClicking);
@@ -38,7 +38,7 @@ const AnimatedButton = ({ children, onClick = () => {}, animTime = 200 }) => {
   return (
     <animated.button
       style={clickStyles}
-      className="animated-button"
+      className={`animated-button ${className}`}
       onClick={handleClick}
       onMouseOver={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}>

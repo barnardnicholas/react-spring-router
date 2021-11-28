@@ -1,25 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, config, animated } from 'react-spring';
+import AnimatedButton from '../components/AnimatedButton';
+import DisplayTitle from '../components/DisplayTitle';
 import BobbleHead from '../DemoItems/BobbleHead';
 
-export default function Home() {
+export default function Home({ isIntro = false, extraStyles = {} }) {
   const [isAnimatingIn, setIsAnimatingIn] = useState(true);
-  const [style, animate] = useSpring({ transform: `scale(10%) translateY(33%)` }, []);
+  const [titleCanShow, setTitleCanShow] = useState(false);
+
+  const [style, animate] = useSpring(
+    { to: { transform: isIntro ? `scale(0%) translateY(33%)` : `scale(100%) translateY(0%)` }, config: config.slow },
+    [],
+  );
+
   useEffect(() => {
-    animate({ transform: `scale(100%) translateY(0%)` });
-    setTimeout(() => {
-      setIsAnimatingIn(false);
-    }, 200);
+    if (isIntro) {
+      animate({ transform: `scale(100%) translateY(0%)` });
+      setTimeout(() => {
+        setIsAnimatingIn(false);
+      }, 300);
+      setTimeout(() => {
+        setTitleCanShow(true);
+      }, 800);
+    }
   }, []);
 
   return (
-    <animated.main style={style} className="container">
-      <div className="bobble-cols">
+    <main style={extraStyles} className="container home">
+      <animated.div style={style} className="bobble-cols">
         <BobbleHead person="mark" isAnimatingIn={isAnimatingIn} extraStyles={{ marginTop: '5rem' }} />
         <BobbleHead person="oli" isAnimatingIn={isAnimatingIn} />
         <BobbleHead person="rob" isAnimatingIn={isAnimatingIn} extraStyles={{ marginTop: '5rem' }} />
-      </div>
-      <h1 className="display-title">Loony Springs</h1>
-    </animated.main>
+      </animated.div>
+      <DisplayTitle visible={isIntro ? titleCanShow : true} text="Loony Springs" />
+      {!!isIntro && (
+        <AnimatedButton className="intro-button" onClick={() => window.location.replace('/home')}>
+          Start
+        </AnimatedButton>
+      )}
+    </main>
   );
 }

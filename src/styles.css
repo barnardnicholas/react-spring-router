@@ -76,9 +76,15 @@ header {
 }
 
 .display-title {
-  font-size: 6rem;
+  font-size: 8rem;
   font-family: 'Thats Font Folks';
   font-style: italic;
+  transform: skewX(-5deg) skewY(-5deg);
+  text-shadow: 5px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.display-title > span {
+  position: relative;
 }
 
 .container {
@@ -86,6 +92,12 @@ header {
   padding: 2rem 15vw;
   height: 93vh;
   width: 100%;
+}
+
+.home {
+  background-image: url('content/looneytunes2.png');
+  background-size: cover;
+  background-position: center;
 }
 
 section {
@@ -183,6 +195,7 @@ section:last-child {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  filter: grayscale();
 }
 
 .bobble-shadow {
@@ -191,4 +204,10 @@ section:last-child {
   width: 66%;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
+}
+
+.intro-button {
+  position: absolute;
+  right: 3vw;
+  bottom: 3vh;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
@@ -17,7 +17,7 @@ const App = () => {
       <AnimatedRoute>
         {(location) => (
           <Switch location={location}>
-            <Route exact path="/" render={(props) => <Home />} />
+            <Route exact path="/home" render={(props) => <Home />} />
             <Route exact path="/arnie" render={(props) => <ArnieIpsum />} />
             <Route path="/bacon" render={(props) => <BaconIpsum />} />
             <Route path="/delorean" render={(props) => <DeloreanIpsum />} />
@@ -29,4 +29,9 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const RootApp = () => {
+  if (window.location.pathname === '/') return <Home isIntro extraStyles={{ height: '100vh' }} />;
+  return <App />;
+};
+
+ReactDOM.render(<RootApp />, document.getElementById('root'));
