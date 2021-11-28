@@ -42,6 +42,12 @@ const BobbleHead = ({ person = 'rob', extraStyles = {}, isAnimatingIn }) => {
     to: { transform: `rotate(${props.angle}deg) scale(${props.scale}%)` },
   });
 
+  const shadowStyles = useSpring({
+    config: customConfig,
+    from: { transform: `translateX(0%) scale(100%)` },
+    to: { transform: `translateX(${props.angle}%) scale(${props.scale}%)` },
+  });
+
   useEffect(() => {
     if (!isAnimatingIn && prevIsAnimatingIn) _handleClick();
   }, [isAnimatingIn, prevIsAnimatingIn]);
@@ -54,6 +60,7 @@ const BobbleHead = ({ person = 'rob', extraStyles = {}, isAnimatingIn }) => {
         className="bobblehead"
         style={{ ...baseStyles, ...bobbleStyles }}
       />
+      <animated.div style={shadowStyles} className="bobble-shadow" />
     </div>
   );
 
