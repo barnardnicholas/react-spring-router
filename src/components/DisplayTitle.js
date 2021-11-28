@@ -9,7 +9,6 @@ const customConfig = {
 
 const DisplayTitle = ({ visible, text = '' }) => {
   const items = text.split('');
-  console.log({ visible });
 
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 2000, friction: 200 },

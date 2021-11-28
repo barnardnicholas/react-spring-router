@@ -3,6 +3,7 @@ import { useSpring, config, animated } from 'react-spring';
 import AnimatedButton from '../components/AnimatedButton';
 import DisplayTitle from '../components/DisplayTitle';
 import BobbleHead from '../DemoItems/BobbleHead';
+import useIntroMusic from '../hooks/useIntroMusic';
 
 export default function Home({ isIntro = false, extraStyles = {} }) {
   const [isAnimatingIn, setIsAnimatingIn] = useState(true);
@@ -24,6 +25,8 @@ export default function Home({ isIntro = false, extraStyles = {} }) {
       }, 800);
     }
   }, []);
+
+  useIntroMusic();
 
   return (
     <main style={extraStyles} className="container home">
