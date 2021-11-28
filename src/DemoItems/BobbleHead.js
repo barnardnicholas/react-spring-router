@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSpring, config, animated } from 'react-spring';
 import AnimatedButton from '../components/AnimatedButton';
 import useHeight from '../hooks/useHeight';
 import rob from '../content/rob.png';
 import oli from '../content/oli.png';
 import mark from '../content/mark.png';
+import usePrevious from '../hooks/usePrevious';
 
 const customConfig = {
   mass: 5,
@@ -23,9 +24,10 @@ const defaultSize = {
   height: 300,
 };
 
-const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
+const BobbleHead = ({ person = 'rob', extraStyles = {}, isAnimatingIn }) => {
   const [props, setProps] = useState({ angle: 0, scale: 100 });
   const [canMouseOver, setCanMouseOver] = useState(true);
+  const prevIsAnimatingIn = usePrevious(isAnimatingIn);
 
   const baseStyles = {
     ...defaultSize,
@@ -39,6 +41,10 @@ const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
     from: { transform: `rotate(0deg) scale(100%)` },
     to: { transform: `rotate(${props.angle}deg) scale(${props.scale}%)` },
   });
+
+  useEffect(() => {
+    if (!isAnimatingIn && prevIsAnimatingIn) _handleClick();
+  }, [isAnimatingIn, prevIsAnimatingIn]);
 
   return (
     <div className="bobble-container">
@@ -85,7 +91,7 @@ const BobbleHead = ({ person = 'rob', extraStyles = {} }) => {
       }, 200);
       setTimeout(() => {
         setCanMouseOver(true);
-      }, 2000);
+      }, 500);
     }
   }
 };
