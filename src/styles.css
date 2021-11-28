@@ -88,6 +88,12 @@ header {
   width: 100%;
 }
 
+.home {
+  background-image: url('content/looneytunes2.png');
+  background-size: cover;
+  background-position: center;
+}
+
 section {
   padding: 2rem 0;
   border-top: 1px solid;
